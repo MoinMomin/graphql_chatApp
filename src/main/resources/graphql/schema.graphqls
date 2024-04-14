@@ -1,0 +1,14 @@
+type Messages {
+    username:String
+    message:String
+}
+type Query {
+    getmessagebyusername(username: String! page:Int size:Int): [Messages]
+}
+
+type Mutation {
+    createmessages(  username:String
+        message:String
+        ):Messages
+
+}
