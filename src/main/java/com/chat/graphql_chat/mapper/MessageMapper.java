@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class MessageMapper {
     private String userName;
-    private int page;
-    private  int size;
+    private int skip;
+    private  int limit;
 }

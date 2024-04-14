@@ -21,11 +21,9 @@ public class MessageServiceimpl implements MessageService {
 
     @Override
     public List<Messages> getChatByUserName(MessageMapper chatMapper) {
-        Pageable pageable = PageRequest.of(chatMapper.getPage(), chatMapper.getSize());
-       // return chatDAO.findByUsernameByDateDesc(chatMapper.getUserName(),pageable);
-       return chatDAO.findByUsernameOrderByDateDesc(chatMapper.getUserName());
+        Pageable pageable = PageRequest.of(chatMapper.getSkip(), chatMapper.getLimit());
+        return chatDAO.findByUsernameOrderByDateDesc(chatMapper.getUserName(), pageable);
 
-      //   return chatDAO.findByUsernameOrderByDateDesc(chatMapper.getUserName(),pageable);
     }
 
     @Override

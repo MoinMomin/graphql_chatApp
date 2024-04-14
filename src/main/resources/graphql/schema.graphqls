@@ -3,7 +3,7 @@ type Messages {
     message:String
 }
 type Query {
-    getmessagebyusername(username: String! page:Int size:Int): [Messages]
+    getmessagebyusername(username: String! skip:Int limit:Int): [Messages]
 }
 
 type Mutation {

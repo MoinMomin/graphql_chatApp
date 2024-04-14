@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
-import org.springframework.graphql.data.method.annotation.SchemaMapping;
 import org.springframework.stereotype.Controller;
 
 import java.util.List;
@@ -19,11 +18,11 @@ public class MessageController {
     @Autowired
     MessageService chatService;
     @QueryMapping
-    public List<Messages> getmessagebyusername(@Argument String username, @Argument int page, @Argument int size) {
+    public List<Messages> getmessagebyusername(@Argument String username, @Argument int skip, @Argument int limit) {
         MessageMapper chatMapper=new MessageMapper();
         chatMapper.setUserName(username);
-        chatMapper.setPage(page);
-        chatMapper.setSize(size);
+        chatMapper.setSkip(skip);
+        chatMapper.setLimit(limit);
         return chatService.getChatByUserName(chatMapper);
     }
 
