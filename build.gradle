@@ -22,7 +22,7 @@ dependencies {
 	testImplementation 'org.springframework:spring-webflux'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
-
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 	testImplementation 'org.springframework.graphql:spring-graphql-test'
 }

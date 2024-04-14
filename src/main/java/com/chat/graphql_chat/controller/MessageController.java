@@ -33,7 +33,7 @@ public class MessageController {
     }*/
     @MutationMapping()
     public Messages createmessages(@Argument String username , @Argument String message) {
-        log.info("save mutation execute--");
+        log.info("createmessages mutation execute--");
         Messages messages=new Messages();
         messages.setUsername(username);
         messages.setMessage(message);
